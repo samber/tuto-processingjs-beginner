@@ -1,0 +1,110 @@
+<html>
+
+<head>
+  <meta http-equiv="content-type" content="text/html; charset=utf-8" />
+  <title>Processing.js</title>
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/processing.js/1.6.6/processing.min.js" type="text/javascript"></script>
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/materialize/1.0.0/css/materialize.min.css">
+</head>
+
+<body>
+
+  <script type="text/processing" data-processing-target="mycanvas">
+
+    /* CODER A PARTIR D'ICI */
+
+    int click_X1 = 0;
+    int click_Y1 = 0;
+
+    int click_X2 = 0;
+    int click_Y2 = 0;
+
+    int x = 0;
+    int y = 0;
+
+    // Fonction exécutée au chargement de la page
+    void setup(){
+      // reset le carré
+      clear();
+
+      // dessine une ligne
+      draw_white_line(100, 100, 400, 400);
+    }
+
+    // Fonction appelée à chaque rafraichissement de l'écran (2 fois par seconde)
+    void draw(){
+
+    }
+
+    // Fonction appelée à chaque click sur le carré
+    // mouseX et mouseY contient la position de la souris dans le carré
+    void mouseClicked() {
+      x = mouseX;
+      y = mouseY;
+    }
+
+    /* FIN */
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+    frameRate( 2 );
+
+    // Setup the Processing Canvas
+    void clear(){
+      size( 500, 500 );
+      strokeWeight( 10 );
+      background( 100 );
+    }
+    // Draw a white line
+    void draw_white_line(x1, y1, x2, y2) {
+      fill( 0, 121, 184 );
+      stroke(255);
+      line(x1, y1, x2, y2);
+    }
+
+    void draw_white_point(x, y) {
+      fill( 0, 121, 184 );
+      stroke(255);
+      line(x, y, x, y);
+    }
+
+
+    </script>
+
+  <div class="row">
+    <div class="col s6">
+      <p>
+        <ul>
+          <li>1- Créer un carré avec la fonction draw_white_line()</li>
+          <br />
+          <li>2- Afficher une ligne positionnée aléatoirement dans le carré<br />Utiliser la fonction "random(500)"</li>
+          <br />
+          <li>3- Cette ligne doit changer de position à chaque frame (rafraichissement de l'image)</li>
+          <br />
+          <li>4- Maintenant, elle doit changer de position à chaque click ;)</li>
+          <br />
+          <li>5- Dessiner un point à chaque click (fonction "draw_white_point(x, y)")</li>
+          <br />
+          <li>6- Dessiner une ligne entre 2 clicks</li>
+        </ul>
+      </p>
+    </div>
+    <div class="col s6">
+      <canvas id="mycanvas"></canvas>
+    </div>
+  </div>
+
+</body>
+
+</html>
